@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fdf0f7, #e6f7ff);
+    color: #333;
+    animation: fadePage 0.8s ease-in;
+}
+
+@keyframes fadePage {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    background: linear-gradient(135deg, #c471ed, #f64f59);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #c471ed;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f64f59;
+}
+
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+h2, h3 {
+    color: #c471ed;
+}
+
+.card {
+    background: #fafafa;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.section-image {
+    width: 220px;
+    display: block;
+    margin: 0 auto 25px auto;
+}
+
+
+.highlight {
+    color: #f64f59;
+    font-weight: 600;
+}
+
+.button-download {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #c471ed, #f64f59);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.button-download:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #c471ed;
+    color: white;
+    margin-top: 40px;
+}
