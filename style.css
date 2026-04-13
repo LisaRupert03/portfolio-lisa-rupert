@@ -1,98 +1,328 @@
+/* RESET */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #fdf0f7, #e6f7ff);
-    color: #333;
+    background: linear-gradient(135deg, #F5F1E9, #E8EFEA);
+    color: #3E3E3E;
     animation: fadePage 0.8s ease-in;
 }
 
+/* ANIMATION PAGE */
 @keyframes fadePage {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* HEADER */
 header {
-    background: linear-gradient(135deg, #c471ed, #f64f59);
+    background: linear-gradient(135deg, #6B8E7A, #4E3B31);
     color: white;
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* effet léger en fond */
+header::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.05);
+    top: -50%;
+    left: -50%;
+    transform: rotate(25deg);
+}
+
+/* NAVIGATION (flexbox ajouté) */
 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     background: white;
     padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
-    margin: 0 20px;
     text-decoration: none;
-    color: #c471ed;
+    color: #6B8E7A;
     font-weight: 600;
+    position: relative;
     transition: 0.3s;
+}
+
+/* effet underline animé */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #4E3B31;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a:hover {
-    color: #f64f59;
+    color: #4E3B31;
 }
 
+/* SECTIONS */
 section {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 60px auto;
     background: white;
-    padding: 40px;
+    padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
 }
 
-h2, h3 {
-    color: #c471ed;
+/* TITRES */
+h2 {
+    color: #4E3B31;
+    margin-bottom: 20px;
 }
 
+h3 {
+    color: #6B8E7A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CARDS */
 .card {
-    background: #fafafa;
+    background: #FAFAFA;
     padding: 25px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #6B8E7A;
+    position: relative;
+}
+
+/* effet hover amélioré */
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* effet lumineux */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    opacity: 0;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card:hover::before {
+    opacity: 1;
 }
 
+/* FLEXBOX GLOBAL POUR TES SECTIONS SPÉCIALES */
+.realisations-section,
+.parcours-section,
+.entreprise-section,
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* ADAPTATION CARDS */
+.realisations-section .card,
+.parcours-section .card,
+.entreprise-section .card {
+    flex: 1 1 450px;
+    max-width: 500px;
+}
+
+/* SKILLS */
+.skills-section .card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-align: center;
+}
+
+/* VEILLE */
+.veille-section {
+    display: flex;
+    justify-content: center;
+}
+
+.veille-section .card {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* CONTACT */
+.contact-section {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* IMAGE */
 .section-image {
-    width: 220px;
+    width: 100%;
+    max-width: 200px;
     display: block;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 20px;
+    border-radius: 10px;
 }
 
-
-.highlight {
-    color: #f64f59;
-    font-weight: 600;
+/* PHOTO PROFIL */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #6B8E7A;
+    transition: 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th {
+    background: #6B8E7A;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f2f2f2;
+}
+
+/* LISTES */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* BOUTONS */
+.button,
 .button-download {
     display: inline-block;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #c471ed, #f64f59);
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #6B8E7A, #4E3B31);
     color: white;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 30px;
     margin-top: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.button:hover,
+.button-download:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* BOUTON GLOBAL CENTRÉ */
+.global-btn {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* FOOTER */
+/* FOOTER AMÉLIORÉ */
+footer {
+    background: #4E3B31;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+/* STRUCTURE */
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* BLOCS */
+.footer-left,
+.footer-center,
+.footer-right {
+    margin: 10px;
+}
+
+/* LIENS */
+.footer-right a {
+    color: #E8EFEA;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.button-download:hover {
-    transform: scale(1.05);
+.footer-right a:hover {
+    text-decoration: underline;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #c471ed;
-    color: white;
-    margin-top: 40px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
+/* RESPONSIVE */ 
+    section {
+        padding: 25px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
