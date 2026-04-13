@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Réalisations - Lisa RUPERT</title>
+
 <link rel="stylesheet" href="style.css">
+
+<!-- Icônes -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation scroll -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
 <header>
-<h1>Réalisations en Formation</h1>
+<h1 id="typing">Réalisations en Formation</h1>
 </header>
 
 <nav>
@@ -16,16 +24,17 @@
 <a href="profil.html">Profil</a>
 <a href="parcours.html">Parcours académique</a>
 <a href="competences.html">Compétences</a>
+<a href="realisations.html">Réalisations</a>
 <a href="experience.html">Entreprise</a>
 <a href="veille.html">Veille</a>
 <a href="contact.html">Contact</a>
 </nav>
 
-<section>
+<section class="realisations-section">
 
-<div class="card">
+<div class="card" data-aos="fade-up">
 
-<h3>1. Mise en place d’une solution de gestion des incidents – GLPI</h3>
+<h3><i class="fa-solid fa-ticket"></i> 1. Mise en place d’une solution de gestion des incidents – GLPI</h3>
 
 <p><strong>Contexte et objectif du projet :</strong></p>
 
@@ -66,11 +75,15 @@ en administration d’outils métiers, en organisation des processus
 et en gestion des priorités.
 </p>
 
+<a href="CR-TP-GLPI-Lisa-RUPERT.pdf" class="button-download">
+<i class="fa-solid fa-file"></i> Accéder au TP GLPI
+</a>
+
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up">
 
-<h3>2. Gestion des habilitations et sécurisation des accès</h3>
+<h3><i class="fa-solid fa-user-shield"></i> 2. Gestion des habilitations et sécurisation des accès</h3>
 
 <p><strong>Contexte et objectif :</strong></p>
 
@@ -107,11 +120,66 @@ J’ai pris conscience de l’importance des droits d’accès
 dans la prévention des risques informatiques.
 </p>
 
+<a href="Lisa RUPERT TP CRSF.pdf" class="button-download">
+<i class="fa-solid fa-file"></i> Accéder au TP CRSF
+</a>
+
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up">
 
-<h3>3. Déploiement d’une solution d’inventaire automatisée</h3>
+<h3><i class="fa-solid fa-shield-halved"></i> 3. Audit de vulnérabilités d’une application web – OWASP JuiceShop</h3>
+
+<p><strong>Contexte et objectif :</strong></p>
+
+<p>
+Dans le cadre du module de cybersécurité, j’ai réalisé un audit
+de vulnérabilités sur l’application web OWASP JuiceShop,
+une application volontairement vulnérable utilisée à des fins pédagogiques.
+L’objectif était d’identifier, exploiter et analyser différentes failles
+de sécurité afin de comprendre les risques associés
+et proposer des solutions de remédiation.
+</p>
+
+<p><strong>Travaux réalisés :</strong></p>
+
+<ul>
+<li>Exploration de l’application et identification des vulnérabilités</li>
+<li>Exploitation de failles (Injection SQL, XSS, contrôle d’accès…)</li>
+<li>Utilisation d’outils comme BurpSuite et DevTools</li>
+<li>Évaluation de la gravité des failles avec le score CVSS</li>
+<li>Proposition de solutions pour sécuriser l’application</li>
+</ul>
+
+<p><strong>Compétences mobilisées :</strong></p>
+
+<ul>
+<li>Analyser les vulnérabilités d’un système</li>
+<li>Sécuriser les applications et les données</li>
+<li>Mettre en œuvre une démarche de test (audit)</li>
+<li>Utiliser des outils de cybersécurité</li>
+</ul>
+
+<p><strong>Apports personnels :</strong></p>
+
+<p>
+Ce projet m’a permis de mieux comprendre les failles de sécurité
+les plus courantes dans les applications web, comme les injections SQL
+ou les attaques XSS. J’ai appris à adopter une démarche d’audit structurée
+et à proposer des solutions concrètes pour renforcer la sécurité.
+Ce travail m’a également sensibilisée à l’importance de la cybersécurité
+dans le développement d’applications.
+</p>
+
+<a href="Lisa RUPERT CR Juiceshop.pdf" class="button-download">
+<i class="fa-solid fa-file"></i> Accéder au TP JuiceShop
+</a>
+
+</div>
+
+<div class="card" data-aos="fade-up">
+
+<h3><i class="fa-solid fa-database"></i> 4. Déploiement d’une solution d’inventaire automatisée</h3>
 
 <p><strong>Contexte et objectif :</strong></p>
 
@@ -150,16 +218,37 @@ du système d’information pour faciliter la maintenance.
 
 </div>
 
-<a href="tableau-synthese-lisa-rupert.xlsx" class="button-download">
-Accéder au tableau de synthèse BTS
+<a href="tableau-synthese-lisa-rupert.xlsx" class="button-download global-btn">
+<i class="fa-solid fa-table"></i> Accéder au tableau de synthèse BTS
 </a>
 
 </section>
 
-
 <footer>
-© 2026 - Lisa RUPERT
+
+<div class="footer-content">
+
+  <div class="footer-left">
+    <p>© 2026 - Lisa RUPERT</p>
+  </div>
+
+  <div class="footer-center">
+    <p>Portfolio BTS SIO SLAM</p>
+  </div>
+
+  <div class="footer-right">
+    <a href="contact.html">Contact</a>
+  </div>
+
+</div>
+
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>
